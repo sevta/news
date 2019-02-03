@@ -21,17 +21,6 @@ export default {
 
   mounted() {
     this.fetchNews();
-
-    // let url = "https://developers.zomato.com/api/v2.1/categories";
-    // let key = "ccc8adf8cd83f927977c6a17ab51d79a";
-    // fetch(url, {
-    //   headers: {
-    //     "user-key": key
-    //   }
-    // })
-    //   .then(res => res.json())
-    //   .then(data => console.log("zomato", data))
-    //   .catch(err => console.log(err));
   },
 
   watch: {
