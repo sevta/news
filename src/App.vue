@@ -15,10 +15,6 @@ import sideMenu from "@/components/sideMenu";
 export default {
   name: "app",
 
-  mounted() {
-    this.fetchNews();
-  },
-
   computed: {
     ...mapState(["toggleMenu", "darkTheme"])
   },
