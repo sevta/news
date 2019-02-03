@@ -15,6 +15,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@eriktoyra/vue-cli-plugin-tailwindcss": "^1.1.1",
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
     "@vue/cli-plugin-pwa": "^3.3.0",
@@ -28,6 +29,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "tailwindcss": "^0.6.6",
     "vue-template-compiler": "^2.5.21"
   }
 }

@@ -1,14 +1,70 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <header-app title="ma news"></header-app>
+    <side-menu v-if="toggleMenu"></side-menu>
+    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
+<script>
+import { mapState } from "vuex";
+import { config } from "./config/";
+import headerApp from "@/components/headerApp";
+import sideMenu from "@/components/sideMenu";
+
+export default {
+  name: "app",
+
+  mounted() {
+    this.fetchNews();
+  },
+
+  computed: {
+    ...mapState(["toggleMenu", "darkTheme"])
+  },
+
+  mounted() {
+    this.fetchNews();
+  },
+
+  watch: {
+    darkTheme(newVal) {
+      if (newVal) {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+      }
+    }
+  },
+
+  components: { headerApp, sideMenu },
+
+  methods: {
+    fetchNews() {
+      fetch(config().url)
+        .then(res => res.json())
+        .then(data => {
+          if (data.status == "ok") {
+            this.$store.commit("setArticles", data.articles);
+          }
+        })
+        .catch(err => console.log(err));
+    }
+  }
+};
+</script>
+
+
+<style lang="postcss">
+body {
+  background: white;
+}
+
+body.dark {
+  @apply bg-blue-darker;
+  color: white !important;
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,7 +72,7 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
+/* #nav {
   padding: 30px;
   a {
     font-weight: bold;
@@ -25,5 +81,5 @@
       color: #42b983;
     }
   }
-}
+}  */
 </style>
