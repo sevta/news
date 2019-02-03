@@ -3,7 +3,7 @@
     <div class="header">
       <img :src="articleView.urlToImage" class="img" alt>
     </div>
-    <div class="news-view-container container max-w-md mx-auto">
+    <div class="news-view-container container mx-auto">
       <div class="title" :class="classDark">{{ articleView.title }}</div>
       <div class="content" :class="classDark">{{ articleView.content }}</div>
       <a class="link-article" target="_blank" :href="articleView.url">baca selengkapnya</a>
@@ -38,18 +38,18 @@ export default {
 }
 
 .news-view-container {
-  @apply mt-1 p-3;
+  @apply mt-5 px-3 max-w-lg;
 }
 
 .header {
   width: 100%;
   height: 30vh;
-  background: tomato;
 }
 
 @media (min-width: 768px) {
   .header {
-    height: 60vh;
+    @apply max-w-lg mt-10 p-3 mx-auto;
+    height: 50vh;
   }
 }
 
@@ -69,7 +69,7 @@ export default {
 }
 
 .link-article {
-  @apply bg-yellow capitalize text-grey-darkest font-bold w-full flex py-3 mb-5 justify-center no-underline;
+  @apply bg-yellow capitalize text-grey-darkest font-bold w-full flex py-3 mb-5 justify-center no-underline mt-6;
 }
 
 .content {

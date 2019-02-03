@@ -27,6 +27,11 @@ export default new Router({
       path: "/article",
       name: "article",
       component: () => import("./views/ArticleView.vue")
+    },
+    {
+      path: "/food",
+      name: "food",
+      component: () => import("./views/Food.vue")
     }
   ]
 });

@@ -8,6 +8,16 @@ export default new Vuex.Store({
     articles: [],
     articleView: {},
     toggleMenu: false,
+    location: {
+      longtitude: null,
+      latitude: null
+    },
+    zomatoLocation: {
+      cityID: null,
+      cityName: null,
+      countryID: null,
+      countryName: null
+    },
     darkTheme: false,
     news: []
   },
@@ -26,6 +36,18 @@ export default new Vuex.Store({
 
     setDarkTheme(state, payload) {
       state.darkTheme = payload;
+    },
+
+    setLocation(state, { latitude, longtitude }) {
+      state.location.latitude = latitude;
+      state.location.longtitude = longtitude;
+    },
+
+    setZomatoLocation(state, { cityID, countryID, cityName, countryName }) {
+      state.zomatoLocation.cityID = cityID;
+      state.zomatoLocation.cityName = cityName;
+      state.zomatoLocation.countryID = countryID;
+      state.zomatoLocation.countryName = countryName;
     }
   },
   actions: {}

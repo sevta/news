@@ -21,6 +21,17 @@ export default {
 
   mounted() {
     this.fetchNews();
+
+    // let url = "https://developers.zomato.com/api/v2.1/categories";
+    // let key = "ccc8adf8cd83f927977c6a17ab51d79a";
+    // fetch(url, {
+    //   headers: {
+    //     "user-key": key
+    //   }
+    // })
+    //   .then(res => res.json())
+    //   .then(data => console.log("zomato", data))
+    //   .catch(err => console.log(err));
   },
 
   watch: {
@@ -68,14 +79,4 @@ body.dark {
   text-align: center;
   color: #2c3e50;
 }
-/* #nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}  */
 </style>
